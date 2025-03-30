@@ -19,11 +19,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize spinner and options
+        // Spinner inicializavimas ir parinkčių pridėjimas
         ddSelection = findViewById(R.id.ddSelection);
         ArrayList<String> selectionOptionsList = new ArrayList<>();
-        selectionOptionsList.add("zodziai");
-        selectionOptionsList.add("raides");
+        selectionOptionsList.add(getString(R.string.words_option));
+        selectionOptionsList.add(getString(R.string.chars_option));
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, selectionOptionsList);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -36,19 +36,19 @@ public class MainActivity extends AppCompatActivity {
         String userInputText = edUserInput.getText().toString();
 
         if (userInputText.isEmpty()) {
-            Toast.makeText(this, "Iveskite teksta", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.empty_input), Toast.LENGTH_SHORT).show();
             return;
         }
 
         String selection = ddSelection.getSelectedItem().toString();
         int result;
 
-        if (selection.equalsIgnoreCase("zodziai")) {
+        if (selection.equalsIgnoreCase(getString(R.string.words_option))) {
             result = ElementsCalculator.getWordsCount(userInputText);
-            tvOutput.setText("zodziai: " + result);
+            tvOutput.setText(getString(R.string.words_option) + ": " + result);
         } else {
             result = ElementsCalculator.getCharsCount(userInputText);
-            tvOutput.setText("raides: " + result);
+            tvOutput.setText(getString(R.string.chars_option) + ": " + result);
         }
     }
 }

@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Word and Character Counter</string>
     <string name="btn_calculate_caption">Calculate</string>
-    <string name="result_text">Result: </string>
+    <string name="result_text">Rezultatas: </string>
+    <string name="input_hint">Iveskite norima teksta</string>
+    <string name="empty_input">Iveskite norima teksta</string>
+    <string name="words_option">zodziai</string>
+    <string name="chars_option">simboliai</string>
 </resources>
+
