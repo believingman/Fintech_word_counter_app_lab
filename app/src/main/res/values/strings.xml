@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Word and Character Counter</string>
+    <string name="btn_calculate_caption">Calculate</string>
+    <string name="result_text">Result: </string>
+</resources>
